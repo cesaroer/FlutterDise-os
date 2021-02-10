@@ -7,58 +7,71 @@ class BasicoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      children: [
-        _crearImagen(),
-        _crearTitulo(),
-        _crearAcciones(),
-        _crearTexto(),
-      ],
-    ));
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            _crearImagen(),
+            _crearTitulo(),
+            _crearAcciones(),
+            _crearTexto(),
+            _crearTexto(),
+            _crearTexto(),
+            _crearTexto(),
+            _crearTexto(),
+          ],
+        ),
+      ),
+    );
   }
 
   Widget _crearImagen() {
-    return Image(
-      image: NetworkImage(
-          "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHw%3D&w=1000&q=80"),
+    return Container(
+      //Infinity es para tomar todo el ancho posible
+      width: double.infinity,
+      child: Image(
+        image: NetworkImage(
+            "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHw%3D&w=1000&q=80"),
+      ),
     );
   }
 
   Widget _crearTitulo() {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
-      child: Row(
-        children: [
-          //Expanded es hacer que los elementos tomen el espacio disponible
-          Expanded(
-            child: Column(
-              //Para alinear elementos en la columna
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Lago con un puente",
-                  style: estiloTitulo,
-                ),
-                SizedBox(
-                  height: 7.0,
-                ),
-                Text(
-                  "Un lago en alemania",
-                  style: estiloSubTitulo,
-                ),
-              ],
+    return SafeArea(
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
+        child: Row(
+          children: [
+            //Expanded es hacer que los elementos tomen el espacio disponible
+            Expanded(
+              child: Column(
+                //Para alinear elementos en la columna
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Lago con un puente",
+                    style: estiloTitulo,
+                  ),
+                  SizedBox(
+                    height: 7.0,
+                  ),
+                  Text(
+                    "Un lago en alemania",
+                    style: estiloSubTitulo,
+                  ),
+                ],
+              ),
             ),
-          ),
-          Icon(
-            Icons.star,
-            color: Colors.red,
-            size: 30.0,
-          ),
-          Text(
-            "41",
-            style: TextStyle(fontSize: 20.0),
-          ),
-        ],
+            Icon(
+              Icons.star,
+              color: Colors.red,
+              size: 30.0,
+            ),
+            Text(
+              "41",
+              style: TextStyle(fontSize: 20.0),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -95,11 +108,13 @@ class BasicoPage extends StatelessWidget {
   }
 
   Widget _crearTexto() {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 40.0),
-      child: Text(
-        "Commodo quis ad elit dolore nisi laborum incididunt nostrud dolor id do aliqua elit. Minim amet culpa dolor qui commodo culpa culpa aliquip ipsum eu pariatur dolor do. Sint magna incididunt ullamco anim ut laborum Lorem elit et nisi. Sint Lorem qui Lorem cupidatat sint velit labore in laboris occaecat aliqua reprehenderit fugiat. Adipisicing dolore velit nostrud magna ipsum elit anim velit. Amet proident officia laboris irure ex magna officia occaecat irure excepteur officia elit eiusmod voluptate. Adipisicing occaecat Lorem pariatur et deserunt aute eiusmod veniam elit.",
-        textAlign: TextAlign.justify,
+    return SafeArea(
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+        child: Text(
+          "Commodo quis ad elit dolore nisi laborum incididunt nostrud dolor id do aliqua elit. Minim amet culpa dolor qui commodo culpa culpa aliquip ipsum eu pariatur dolor do. Sint magna incididunt ullamco anim ut laborum Lorem elit et nisi. Sint Lorem qui Lorem cupidatat sint velit labore in laboris occaecat aliqua reprehenderit fugiat. Adipisicing dolore velit nostrud magna ipsum elit anim velit. Amet proident officia laboris irure ex magna officia occaecat irure excepteur officia elit eiusmod voluptate. Adipisicing occaecat Lorem pariatur et deserunt aute eiusmod veniam elit.",
+          textAlign: TextAlign.justify,
+        ),
       ),
     );
   }
