@@ -161,16 +161,17 @@ class BotonesPage extends StatelessWidget {
   }
 
   Widget _crearBotonRedondeado(Color color, IconData icono, String texto) {
-    return ClipRect(
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 15.0, sigmaY: 15.0),
-        child: Container(
-          height: 180.0,
-          margin: EdgeInsets.all(15.0),
-          decoration: BoxDecoration(
-            color: Color.fromRGBO(62, 66, 107, 0.70),
-            borderRadius: BorderRadius.circular(20.0),
-          ),
+    return Container(
+      height: 180.0,
+      margin: EdgeInsets.all(15.0),
+      decoration: BoxDecoration(
+        color: Color.fromRGBO(62, 66, 107, 0.70),
+        borderRadius: BorderRadius.circular(30.0),
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(30.0),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 15.0, sigmaY: 15.0),
           child: Column(
             mainAxisAlignment:
                 MainAxisAlignment.spaceAround, // da espacio entre los elementos
