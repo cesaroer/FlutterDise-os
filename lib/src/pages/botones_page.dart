@@ -7,6 +7,7 @@ class BotonesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromRGBO(55, 57, 84, 1.0),
       body: Stack(
         children: [
           _fondoApp(),
