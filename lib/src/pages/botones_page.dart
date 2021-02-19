@@ -11,9 +11,7 @@ class BotonesPage extends StatelessWidget {
           _fondoApp(),
           SingleChildScrollView(
             child: Column(
-              children: [
-                _titulos(),
-              ],
+              children: [_titulos(), _botonesRedondeados()],
             ),
           ),
         ],
@@ -121,6 +119,73 @@ class BotonesPage extends StatelessWidget {
             title: Container(),
             icon: Icon(Icons.person, size: 30.0),
           ),
+        ],
+      ),
+    );
+  }
+
+  Widget _botonesRedondeados() {
+    return Table(
+      children: [
+        TableRow(
+          children: [
+            _crearBotonRedondeado(),
+            _crearBotonRedondeado(),
+          ],
+        ),
+        TableRow(
+          children: [
+            _crearBotonRedondeado(),
+            _crearBotonRedondeado(),
+          ],
+        ),
+        TableRow(
+          children: [
+            _crearBotonRedondeado(),
+            _crearBotonRedondeado(),
+          ],
+        ),
+        TableRow(
+          children: [
+            _crearBotonRedondeado(),
+            _crearBotonRedondeado(),
+          ],
+        )
+      ],
+    );
+  }
+
+  Widget _crearBotonRedondeado() {
+    return Container(
+      height: 180.0,
+      margin: EdgeInsets.all(15.0),
+      decoration: BoxDecoration(
+        color: Color.fromRGBO(62, 66, 107, 0.70),
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+      child: Column(
+        mainAxisAlignment:
+            MainAxisAlignment.spaceAround, // da espacio entre los elementos
+        children: [
+          SizedBox(
+            height: 1.0,
+          ),
+          CircleAvatar(
+            radius: 35.0, //establece el tamaño del circulo
+            backgroundColor: Colors.pinkAccent,
+            child: Icon(
+              Icons.ac_unit_sharp,
+              color: Colors.white,
+              size: 30.0,
+            ),
+          ),
+          Text(
+            "ITEM",
+            style: TextStyle(color: Colors.pinkAccent),
+          ),
+          SizedBox(
+            height: 5.0,
+          )
         ],
       ),
     );
