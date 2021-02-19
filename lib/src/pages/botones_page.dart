@@ -166,7 +166,7 @@ class BotonesPage extends StatelessWidget {
       height: 180.0,
       margin: EdgeInsets.all(15.0),
       decoration: BoxDecoration(
-        color: Color.fromRGBO(62, 66, 107, 0.70),
+        color: Color.fromRGBO(62, 66, 107, 0.5),
         borderRadius: BorderRadius.circular(30.0),
       ),
       child: ClipRRect(
